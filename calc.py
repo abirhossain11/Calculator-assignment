@@ -2,20 +2,22 @@ num1 = float(input("Enter First value : "))
 op = input("Choose operator : ")
 num2 = float(input("Enter Second value : "))
 
-if op == '+' : 
+if op == '+':
     ans = num1 + num2
-    print("Result is : ", ans)
-elif op == '-' : 
+    print(f"Result is : {ans}")
+elif op == '-':
     ans = num1 - num2
-    print("Result is : ", ans)
-elif op == '*' : 
+    print(f"Result is : {ans}")
+elif op == '*':
     ans = num1 * num2
-    print("Result is : ", ans)
-elif op == '/' : 
-    ans = num1 / num2
-    if num2 == 0 :
-        print("Denominator should not be 0")
+    print(f"Result is : {ans}")
+elif op == '/':
+    try:
+        ans = num1/num2
+    except ZeroDivisionError:
+        print("You can't divide by 0")
     else:
-        print("Result is : ", ans)
+        print(f"Result is : {ans}")
+
 else:
-    print("invalid inputs!")
+    print("Invalid inputs!")
